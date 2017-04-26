@@ -15,6 +15,12 @@ namespace Todoist.Net
             _httpClient = new HttpClient { BaseAddress = new Uri("https://todoist.com/API/v7/") };
         }
 
+        public TodoistRestClient(HttpClient httpClient)
+        {
+            // ReSharper disable once ExceptionNotDocumented
+            _httpClient = httpClient;
+        }
+
         public void Dispose()
         {
             _httpClient?.Dispose();

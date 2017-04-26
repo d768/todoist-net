@@ -43,6 +43,11 @@ namespace Todoist.Net
         {
         }
 
+        public TodoistClient(string token, HttpClient client)
+            : this(token, new TodoistRestClient(client))
+        {
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TodoistClient" /> class.
         /// </summary>
