@@ -50,7 +50,7 @@ namespace Todoist.Net.Models
         /// The color.
         /// </value>
         [JsonProperty("color")]
-        public int Color { get; set; }
+        public uint Color { get; set; }
 
         /// <summary>
         /// Gets a value indicating whether this instance is deleted.
@@ -70,7 +70,7 @@ namespace Todoist.Net.Models
         /// </value>
         /// <remarks>Filter’s order in the filter list (where the smallest value should place the filter at the top).</remarks>
         [JsonProperty("item_order")]
-        public int ItemOrder { get; set; }
+        public uint ItemOrder { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the filter.

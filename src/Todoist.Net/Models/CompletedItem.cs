@@ -52,7 +52,7 @@ namespace Todoist.Net.Models
         /// The note count.
         /// </value>
         [JsonProperty("note_count")]
-        public int NoteCount { get; internal set; }
+        public uint NoteCount { get; internal set; }
 
         /// <summary>
         /// Gets the notes.

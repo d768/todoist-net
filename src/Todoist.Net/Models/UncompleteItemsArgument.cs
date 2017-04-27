@@ -9,7 +9,7 @@ namespace Todoist.Net.Models
         public UncompleteItemsArgument(IEnumerable<ItemState> itemStates)
         {
             Ids = new LinkedList<ComplexId>();
-            RestoreState = new Dictionary<ComplexId, int[]>();
+            RestoreState = new Dictionary<ComplexId, uint[]>();
 
             foreach (var state in itemStates)
             {
@@ -22,6 +22,6 @@ namespace Todoist.Net.Models
         public ICollection<ComplexId> Ids { get; }
 
         [JsonProperty("restore_state")]
-        public IDictionary<ComplexId, int[]> RestoreState { get; }
+        public IDictionary<ComplexId, uint[]> RestoreState { get; }
     }
 }

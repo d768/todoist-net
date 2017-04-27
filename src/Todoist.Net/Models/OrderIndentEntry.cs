@@ -12,7 +12,7 @@
         /// <param name="id">The identifier.</param>
         /// <param name="order">The order.</param>
         /// <param name="indent">The indent.</param>
-        public OrderIndentEntry(ComplexId id, int order, int indent)
+        public OrderIndentEntry(ComplexId id, uint order, uint indent)
             : base(id, order)
         {
             Indent = indent;
@@ -22,11 +22,11 @@
         /// Gets the indent.
         /// </summary>
         /// <value>The indent.</value>
-        public int Indent { get; }
+        public uint Indent { get; }
 
-        internal virtual int[] ToArray()
+        internal virtual uint[] ToArray()
         {
-            var array = new int[2];
+            var array = new uint[2];
 
             array[0] = Order;
 

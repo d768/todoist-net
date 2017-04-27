@@ -32,7 +32,7 @@ namespace Todoist.Net.Models
         /// </summary>
         /// <value>The color.</value>
         [JsonProperty("color")]
-        public int Color { get; set; }
+        public uint Color { get; set; }
 
         /// <summary>
         /// Gets a value indicating whether this instance is deleted.
@@ -47,7 +47,7 @@ namespace Todoist.Net.Models
         /// </summary>
         /// <value>The item order.</value>
         [JsonProperty("item_order")]
-        public int ItemOrder { get; set; }
+        public uint ItemOrder { get; set; }
 
         /// <summary>
         /// Gets or sets the name.

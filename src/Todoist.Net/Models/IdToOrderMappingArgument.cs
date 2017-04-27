@@ -8,7 +8,7 @@ namespace Todoist.Net.Models
     {
         public IdToOrderMappingArgument(IEnumerable<OrderEntry> orderEntries)
         {
-            Ids = new Dictionary<ComplexId, int>();
+            Ids = new Dictionary<ComplexId, uint>();
             foreach (var entry in orderEntries)
             {
                 Ids.Add(entry.Id, entry.Order);
@@ -16,6 +16,6 @@ namespace Todoist.Net.Models
         }
 
         [JsonProperty("id_order_mapping")]
-        public IDictionary<ComplexId, int> Ids { get; set; }
+        public IDictionary<ComplexId, uint> Ids { get; set; }
     }
 }

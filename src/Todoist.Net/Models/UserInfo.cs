@@ -58,21 +58,21 @@ namespace Todoist.Net.Models
         /// </summary>
         /// <value>The completed count.</value>
         [JsonProperty("completed_count")]
-        public int CompletedCount { get; internal set; }
+        public uint CompletedCount { get; internal set; }
 
         /// <summary>
         /// Gets the completed today.
         /// </summary>
         /// <value>The completed today.</value>
         [JsonProperty("completed_today")]
-        public int CompletedToday { get; internal set; }
+        public uint CompletedToday { get; internal set; }
 
         /// <summary>
         /// Gets the identifier.
         /// </summary>
         /// <value>The identifier.</value>
         [JsonProperty("id")]
-        public int Id { get; internal set; }
+        public uint Id { get; internal set; }
 
         /// <summary>
         /// Gets the image identifier.
@@ -86,7 +86,7 @@ namespace Todoist.Net.Models
         /// </summary>
         /// <value>The inbox project.</value>
         [JsonProperty("inbox_project")]
-        public int InboxProject { get; internal set; }
+        public uint InboxProject { get; internal set; }
 
         /// <summary>
         /// Gets a value indicating whether this instance is biz admin.

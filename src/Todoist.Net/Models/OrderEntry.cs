@@ -10,7 +10,7 @@
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="order">The order.</param>
-        public OrderEntry(ComplexId id, int order)
+        public OrderEntry(ComplexId id, uint order)
         {
             Id = id;
             Order = order;
@@ -26,6 +26,6 @@
         /// Gets the order.
         /// </summary>
         /// <value>The order.</value>
-        public int Order { get; }
+        public uint Order { get; }
     }
 }

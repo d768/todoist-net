@@ -28,7 +28,7 @@ namespace Todoist.Net.Models
         /// </summary>
         /// <value>The automatic reminder.</value>
         [JsonProperty("auto_reminder")]
-        public int AutoReminder { get; set; }
+        public uint AutoReminder { get; set; }
 
         /// <summary>
         /// Gets or sets the date format.
@@ -91,7 +91,7 @@ namespace Todoist.Net.Models
         /// </summary>
         /// <value>The theme.</value>
         [JsonProperty("theme")]
-        public int Theme { get; set; }
+        public uint Theme { get; set; }
 
         /// <summary>
         /// Gets or sets the time format.

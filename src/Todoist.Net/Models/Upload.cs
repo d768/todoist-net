@@ -21,7 +21,7 @@ namespace Todoist.Net.Models
         /// </summary>
         /// <value>The size of the file.</value>
         [JsonProperty("file_size")]
-        public int FileSize { get; internal set; }
+        public uint FileSize { get; internal set; }
 
         /// <summary>
         /// Gets the type of the file.

@@ -19,21 +19,21 @@ namespace Todoist.Net.Models
         /// </summary>
         /// <value>The hours.</value>
         [JsonProperty("hours")]
-        public int Hours { get; internal set; }
+        public uint Hours { get; internal set; }
 
         /// <summary>
         /// Gets the is DST.
         /// </summary>
         /// <value>The is DST.</value>
         [JsonProperty("is_dst")]
-        public int IsDst { get; internal set; }
+        public uint IsDst { get; internal set; }
 
         /// <summary>
         /// Gets the minutes.
         /// </summary>
         /// <value>The minutes.</value>
         [JsonProperty("minutes")]
-        public int Minutes { get; internal set; }
+        public uint Minutes { get; internal set; }
 
         /// <summary>
         /// Gets the timezone.
