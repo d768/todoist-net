@@ -43,9 +43,35 @@ namespace Todoist.Net
         {
         }
 
-        public TodoistClient(string token, HttpClient client)
-            : this(token, new TodoistRestClient(client))
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TodoistClient" /> class. 
+        /// </summary>
+        /// <param name="token">The token</param>
+        /// <param name="messageHandler">Message handler</param>
+        public TodoistClient(string token, HttpMessageHandler messageHandler)
         {
+            if (string.IsNullOrEmpty(token))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(token));
+            }
+
+            _token = token;
+            var configuredClient = new HttpClient(messageHandler) { BaseAddress = new Uri("https://todoist.com/API/v7/") };
+            _restClient = new TodoistRestClient(configuredClient);
+
+            Projects = new ProjectsService(this);
+            Templates = new TemplateService(this);
+            Items = new ItemsService(this);
+            Labels = new LabelsService(this);
+            Notes = new NotesService(this);
+            Uploads = new UploadService(this);
+            Filters = new FiltersService(this);
+            Activity = new ActivityService(this);
+            Notifications = new NotificationsService(this);
+            Backups = new BackupService(this);
+            Reminders = new ReminersService(this);
+            Users = new UsersService(this);
+            Sharing = new SharingService(this);
         }
 
         /// <summary>
@@ -79,6 +105,8 @@ namespace Todoist.Net
             Sharing = new SharingService(this);
         }
 
+        private void InitServices()
+        { }
         private TodoistClient()
         {
             _restClient = new TodoistRestClient();
@@ -530,7 +558,7 @@ namespace Todoist.Net
                 }
 
                 exceptions.AddLast(
-                    new TodoistException((int)dynamicStatus.error_code, dynamicStatus.error.ToString(), dynamicStatus));
+                    new TodoistException((uint)dynamicStatus.error_code, dynamicStatus.error.ToString(), dynamicStatus));
             }
 
             if (exceptions?.Any() == true)
